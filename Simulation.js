@@ -45,7 +45,7 @@ function Simulation( lunatics, straights, bads, nbLigne, nbCol, epoch, verbose )
 		nb: straights.nb || 12,
 		reproduction: straights.reproduction || 0.2,
 		minAge: straights.minAge || 20,
-		maxAge: straights.maxAge = 100;
+		maxAge: straights.maxAge || 100,
 		minReproductionAge: straights.minReproductionAge || 25,
 	};
 	
@@ -54,7 +54,9 @@ function Simulation( lunatics, straights, bads, nbLigne, nbCol, epoch, verbose )
 
 	// À compléter
 	this.bads = {
-
+		nb: 1,
+		minAge: straights.minAge || 30,
+		maxAge: straights.maxAge || 80,
 	}
 
 	// À compléter
