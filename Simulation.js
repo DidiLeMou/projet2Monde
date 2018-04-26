@@ -1,3 +1,11 @@
+/********************************************************************************
+ *
+ * Classe Simulation
+ * 2018-03-28
+ * Description:
+ *
+ ********************************************************************************/
+
 // Il faut importer les différents constructeurs et fonctions utiles
 // nécessaires au bon fonctionnement de votre code. En gros nous
 // devons importer les fichiers qui contiennent le code que nous
@@ -40,7 +48,6 @@ function Simulation( lunatics, straights, bads, nbLigne, nbCol, epoch, verbose )
 		minAgeReproduction: lunatics.minAgeRep || 18,		// ...
 	}
 
-	// À compléter
 	this.straights = {
 		nb: straights.nb || 12,
 		reproduction: straights.reproduction || 0.2,
@@ -48,11 +55,7 @@ function Simulation( lunatics, straights, bads, nbLigne, nbCol, epoch, verbose )
 		maxAge: straights.maxAge || 100,
 		minReproductionAge: straights.minReproductionAge || 25,
 	};
-	
 
-	}
-
-	// À compléter
 	this.bads = {
 		nb: 1,
 		minAge: straights.minAge || 30,
@@ -60,13 +63,13 @@ function Simulation( lunatics, straights, bads, nbLigne, nbCol, epoch, verbose )
 	}
 
 	// À compléter
-	this.nbLigne;
-	this.nbCol;
-	this.epoch;
-	this.verbose;
+	this.nbLigne = nbLigne || 5;
+	this.nbCol = nbCol || 10;
+	this.epoch = epoch || 1;
+	this.verbose = verbose || 0;
 
 	// Créons la grille.
-	grille = creerGrille( ...parametres );
+	grille = creerGrille(nbCol, nbLigne);
 
 	// Une fois notre Simulation bien configurée, ajoutons les
 	// personnages dans notre grille.
@@ -170,15 +173,11 @@ var game = new Simulation(
 
 game.stats();
 
-/********************************************************************************
- *
- * Classe Simulation
- * 2018-03-28
- * Description:
- *
- ********************************************************************************/
 
-/*ON S\ATTEND A CONSTRUIRE UNE SIMULATION AVEC LES OBJETS ET DONNEES
+
+/*
+ * NOTES
+ * ON S\ATTEND A CONSTRUIRE UNE SIMULATION AVEC LES OBJETS ET DONNEES
  * SUIVANTES
  *
  * SCHEMA LUNATICS
@@ -209,10 +208,3 @@ game.stats();
  *
  * verbose: nombre d<affichages apres chaque mouvement
 */
-
-// TODO Valeurs par defaut
-var Simulation = function(lunatics, straights, bads, nbLignes, nbColonnes, epoch, verbose) {
-	this.nbLignes = nbLignes;
-	this.nbColonnes = nbColonnes;
-	// TODO nbre personnages et type personnages doivent etre dans les parametres
-} 
