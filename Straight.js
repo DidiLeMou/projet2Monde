@@ -13,7 +13,7 @@
  * @param {Number} j coordonnée horizontale
  * 
  */
-var Straight = function (i, j) {
+var Straight = function (i, j, grille) {
     this.i = i;
     this.j = j;
     this.ageReproduction = AGE_REPRODUCTION;//25
@@ -39,7 +39,27 @@ var Straight = function (i, j) {
             + Math.ceil(AGE_MORT_MIN);
     };
 
+    grille[this.i][this.j] = function(){
+        switch(this.vecteurDeplacement){
+            case 0:
+                return 'v';
+                break;
+            case 1:
+                return '^';
+                break;
+            case 2:
+                return '>';
+            case 3:
+                return '<';
+                break;
+            default:
+             break;
+        }
+    }
+
 };
+
+
 
 /**
  * Calcul déplacement

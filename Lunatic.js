@@ -18,9 +18,10 @@ const AGE_MORT_MAX = 110;
  * @param {Number} j coordonnée horizontale
  * 
  */
-var Lunatic = function(i,j){
+var Lunatic = function(i,j,grille){
     this.i = i;
     this.j = j;
+    grille[this.i][this.j] = 'L';
     this.ageReproduction = AGE_REPRODUCTION;
     this.tauxReproduction = PROB_REPRODUCTION;
     

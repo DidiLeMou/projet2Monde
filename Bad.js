@@ -12,11 +12,13 @@ const AGE_MORT_MAX = 80;
  * Constructeur par paramètres
  * @param {Number} i coordonnée verticale
  * @param {Number} j coordonnée horizontale
+ * @param {array2D} grille
  * 
  */
-var Bad = function (i, j) {
+var Bad = function (i, j, grille) {
     this.i = i;
     this.j = j;
+    grille[this.i][this.j] = 'B';
     this.vision = 5;
     /**
      * Calcul de l'âge de mort
