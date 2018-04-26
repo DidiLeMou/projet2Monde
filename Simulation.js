@@ -83,7 +83,10 @@ Simulation.prototype.ajouterPersonnages = function() {
 
 	// Les lunatics
 	for (var i = 0; i < this.lunatics.nb; i++) {
-		// magie
+		// calculer et verifier coors randoms
+		var coordonnees = calcCoorRandom(grille, this.nbCol, this.nbLigne);
+		// TODO creer personnage
+		var lunatic = new Lunatic(coordonnees[0], coordonnees[1], grille);
 	}
 
 	// Les straights
@@ -173,38 +176,30 @@ var game = new Simulation(
 
 game.stats();
 
-
-
-/*
- * NOTES
- * ON S\ATTEND A CONSTRUIRE UNE SIMULATION AVEC LES OBJETS ET DONNEES
- * SUIVANTES
- *
- * SCHEMA LUNATICS
- * var lunatics = {
- * 		nb: Number,
- * 		reproduction: Number
- * 		minAge: Number,
- * 		maxAge: Number
- * }
- *
- * SCHEMA STRAIGHT
- * var straights = {
- * 		nb: Number,
- * 		reproduction: Number,
- * 		minReproductionAge: Number
- * }
- *
- * SCHEMA
- * var bads = {
- * 		nb: Number = 1
- * }
- *
- * nbLignes: nombre de lignes de la grille
- *
- * nbColonnes: nombre de colonnes de la grille
- *
- * epoch: nombre de debut-fin DEFAULT = 1
- *
- * verbose: nombre d<affichages apres chaque mouvement
-*/
+/**
+ * Permet de calculer un set de coordonnees aleatoire pour faire commencer un personnage
+ * @param {Array} grille grille de jeu 
+ * @param {Number} maxI coordonnee max en i 
+ * @param {Number} maxJ coordonnee max en j 
+ * @returns {Array} tableau contenant coori, cooorj
+ */
+var calcCoorRandom = function(grille, maxI, maxJ) {
+	var coors = [];
+	var initI, initJ;
+	while (true) {
+        // generer ensemble de coordonnees aleatoires
+        initI = Math.floor(Math.random() *
+			(Math.floor(initI+1) - Math.ceil(0)))
+			+ Math.ceil(0);
+		initJ = Math.floor(Math.random() *
+			(Math.floor(initJ+1) - Math.ceil(0)))
+			+ Math.ceil(0);
+        // verification
+        if (grille[i][j] === ' ') {
+			coors.push(initI);
+			coors.push(initJ);
+            break;
+        }
+    }
+    return coors;
+}

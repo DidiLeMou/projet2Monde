@@ -94,18 +94,18 @@ var dessinerGrille = function(grille, l, h){
 	return sortie;
 };
 
-//--------------------------------------------------------------------
-// Utilisation ...
+// //--------------------------------------------------------------------
+// // Utilisation ...
 
-// Juste pour faire une démonstration, créons une largeur et une hauteur.
-var largeur = 5;
-var hauteur = 8;
+// // Juste pour faire une démonstration, créons une largeur et une hauteur.
+// var largeur = 5;
+// var hauteur = 8;
 
-// On créer notre grille vide.
-var grille = creerGrille(largeur, hauteur);
+// // On créer notre grille vide.
+// var grille = creerGrille(largeur, hauteur);
 
-// On écrit du code magique pour peupler notre grille.
-// ...
+// // On écrit du code magique pour peupler notre grille.
+// // ...
 
-// On affiche la grille et son contenu.
-print(dessinerGrille(grille, largeur, hauteur));
+// // On affiche la grille et son contenu.
+// print(dessinerGrille(grille, largeur, hauteur));
